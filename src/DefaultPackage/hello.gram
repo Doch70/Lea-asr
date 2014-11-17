@@ -6,4 +6,4 @@
 
 grammar hello;
 
-public <greet> = (Salut | bonjour) ( yann | nicolas | Paul | Philipe | Rita | Will );
+public <greet> = (Léa) (dit bonjour) (présente toi) ;
