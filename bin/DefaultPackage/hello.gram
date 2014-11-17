@@ -1,0 +1,17 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for Hello World example
+ */
+
+grammar hello;
+
+public
+<command> = <name> <action> <object>;
+<name> = [ yann ];
+<action> = /10/ ouvre |/2/ ferme |/1/ supprime |/1/ deplace;
+<object> = [le | un | une] (fenetre | fichier | menu);
+<startPolite> = (s'il te plait | peux tu | pourrais tu | tu peux | tu pourrais) *;
+<endPolite> = [ merci ];
+
+
