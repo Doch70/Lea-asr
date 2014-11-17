@@ -105,6 +105,14 @@
     <!-- The Dictionary configuration                            -->
     <!-- ******************************************************** -->
 
+	<component name="trigramModel" type="edu.cmu.sphinx.linguist.language.ngram.large.LargeTrigramModel">
+    <property name="unigramWeight" value="0.7"/>
+    <property name="maxDepth" value="3"/>
+    <property name="logMath" value="logMath"/>
+    <property name="dictionary" value="dictionary"/>
+    <property name="location" value="ressource:/french/french3g62K.lm.dmp"/> 
+     </component>
+     
     <component name="dictionary"
         type="edu.cmu.sphinx.linguist.dictionary.FastDictionary">
         <property name="fillerPath" value="resource:/french/noisedict"/>
@@ -265,7 +273,6 @@
     </component>
 
 </config>
-
 
 
 
