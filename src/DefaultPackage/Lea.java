@@ -4,19 +4,10 @@ import edu.cmu.sphinx.frontend.util.Microphone;
 import edu.cmu.sphinx.recognizer.Recognizer;
 import edu.cmu.sphinx.result.Result;
 import edu.cmu.sphinx.util.props.ConfigurationManager;
-
-
-
-/**
- * A simple HelloWorld demo showing a simple speech application built using Sphinx-4. This application uses the Sphinx-4
- * endpointer, which automatically segments incoming audio into utterances and silences.
- */
 public class Lea {
 
     public static void main(String[] args) {
         ConfigurationManager cm;
-
-        
         cm = new ConfigurationManager(Lea.class.getResource("Lea.sphinx4.config.xml"));
        
 
@@ -32,11 +23,11 @@ public class Lea {
         }
 
         System.out.println("Lea vous écoute : ");
-
+        fonction.say("Bonjour");
         // loop the recognition until the programm exits.
         while (true) {
-            System.out.println("Vous pouvez parler :\n");
-
+            System.out.println("Vous pouvez parler ou écrire :\n");
+            
             Result result = recognizer.recognize();
 
             if (result != null) {
@@ -44,13 +35,7 @@ public class Lea {
                 System.out.println("Vous avez dit: " + resultText);
                 
                 if (resultText.contains("bonjour")) {
-                	String cmd = "espeak -v french bonjour";
-                	try{
-                		Runtime.getRuntime().exec(cmd);
-                	}
-                	catch(Exception e){
-                		
-                	}
+                	fonction.say("Bonjour");
             }
                 
             } else {

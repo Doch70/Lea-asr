@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="/home/yann/workspace/Lea-asr/src/lib/jsapi.jar"/>
 	<classpathentry kind="lib" path="/home/yann/workspace/Lea-asr/src/lib/junit-4.8.1.jar"/>
 	<classpathentry kind="lib" path="/home/yann/workspace/Lea-asr/src/lib/sphinx4.jar"/>
+	<classpathentry kind="lib" path="/home/yann/workspace/Lea-asr/src/lib/Shell.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
