@@ -6,4 +6,4 @@
 
 grammar hello;
 
-public <greet> = (Léa) (dit bonjour) (présente toi) ;
+public <greet> = (Léa dit bonjour) ;

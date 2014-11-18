@@ -11,13 +11,13 @@ import edu.cmu.sphinx.util.props.ConfigurationManager;
  * A simple HelloWorld demo showing a simple speech application built using Sphinx-4. This application uses the Sphinx-4
  * endpointer, which automatically segments incoming audio into utterances and silences.
  */
-public class testfr {
+public class Lea {
 
     public static void main(String[] args) {
         ConfigurationManager cm;
 
         
-        cm = new ConfigurationManager(testfr.class.getResource("testfr.config.xml"));
+        cm = new ConfigurationManager(Lea.class.getResource("Lea.sphinx4.config.xml"));
        
 
         Recognizer recognizer = (Recognizer) cm.lookup("recognizer");
@@ -26,35 +26,35 @@ public class testfr {
         // start the microphone or exit if the programm if this is not possible
         Microphone microphone = (Microphone) cm.lookup("microphone");
         if (!microphone.startRecording()) {
-            System.out.println("Cannot start microphone.");
+            System.out.println("Impossible de démarrer le micro.");
             recognizer.deallocate();
             System.exit(1);
         }
 
-        System.out.println("Say: (Good morning | Hello) ( Bhiksha | Evandro | Paul | Philip | Rita | Will )");
+        System.out.println("Lea vous écoute : ");
 
         // loop the recognition until the programm exits.
         while (true) {
-            System.out.println("Start speaking. Press Ctrl-C to quit.\n");
+            System.out.println("Vous pouvez parler :\n");
 
             Result result = recognizer.recognize();
 
             if (result != null) {
                 String resultText = result.getBestFinalResultNoFiller();
-                System.out.println("You said: " + resultText);
+                System.out.println("Vous avez dit: " + resultText);
                 
-                
-                	/*String cmd = "espeak -v french bonjour";
+                if (resultText.contains("bonjour")) {
+                	String cmd = "espeak -v french bonjour";
                 	try{
                 		Runtime.getRuntime().exec(cmd);
                 	}
                 	catch(Exception e){
                 		
-                	}*/
-                
+                	}
+            }
                 
             } else {
-                System.out.println("I can't hear what you said.\n");
+                System.out.println("Je n'ai pas entendu ce que vous avez dit .\n");
             }
             
             
